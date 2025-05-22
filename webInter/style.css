@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: content-box;
+}
+body{
+    overflow: hidden;
+    background-color:whitesmoke;
+}
+
+.contanier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:140vh;
+}
+
+video{
+    animation:up 1s ease-in-out; 
+    border-radius:50%;
+    width:600px;
+}
+
+@keyframes up{
+    0%{
+        transform: translateY(500px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

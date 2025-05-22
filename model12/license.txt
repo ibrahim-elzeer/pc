@@ -1,0 +1,11 @@
+Model Information:
+* title:	Xbox One Controller Free
+* source:	https://sketchfab.com/3d-models/xbox-one-controller-free-97fb54c001f84a6896b6ce8eb7a1814d
+* author:	paxillop (https://sketchfab.com/paxillop)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Xbox One Controller Free" (https://sketchfab.com/3d-models/xbox-one-controller-free-97fb54c001f84a6896b6ce8eb7a1814d) by paxillop (https://sketchfab.com/paxillop) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

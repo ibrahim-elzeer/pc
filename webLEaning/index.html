@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Project</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Passion+One:wght@400;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">  
+	<link href="../webLEaning/style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js" ></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="vcp3MmS1Eznjm2x1Wgw8h";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+ 
+   
+</head>
+
+<body id="vanta-bgd">
+
+    <div class="contanier">
+      <header class="header" id="header">
+            <div class="dwfe">
+              <i id="menuBtn" class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="user-icon">
+              <i onclick="toggleMenu2()" class="fa-solid fa-user"></i>
+          
+              <div class="select" id="userMenu2">
+                <div style="color:red;" onclick="window.location.href='../login/index.html'" class="div1">تسجيل الخروج</div>
+                <div  style="border:none;" onclick="window.location.href='../detailsuser/index.html'" class="div1">بيانات الطالب</div>
+              </div>
+            </div>
+      </header>
+  
+        <nav class="sidebar " id="sidebar">
+            
+            <div class="lav">
+              <label for="motherboard-links">Go to Section</label>
+            </div>
+
+           <div class="dld">
+            <div  class="option1">
+              <a href="#scetion1">motherboard</a>
+            </div>
+
+          <!-- <div class="option2">
+              <a href="#section2">kinds of motherboard</a>
+          </div> -->
+
+          <div class="option3">
+              <a href="#scetion3">Input Devices</a>
+          </div>
+
+          <div class="option4">
+              <a href="#scetion4"> Examples of input Devices</a>
+          </div>
+
+          <div class="option5">
+              <a href="#scetion5">output devices</a>
+          </div>
+
+          <div class="option6">
+              <a href="#scetion6">Examples ofoutput devices</a>
+          </div>
+
+          <div class="option7">
+              <a href="#scetion7">camera</a>
+          </div>
+
+          <div class="option8">
+            <a href="#scetion8"> Examples of the camera</a>
+          </div>
+
+          <div class="option9">
+            <a href="../certificate/certificate.html">finall</a>
+          </div>
+
+           </div>
+        </nav>
+
+        
+        <main class="main " id="main">
+            <!-- اscetion1(motherboard)-->
+
+            <div class="cont " id="scetion1">
+              <div class="gstr hidden1">
+
+                <div class="rgbhn">
+                  <div class="model">
+                    <model-viewer src="../model2/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls></model-viewer>
+                  </div>
+                </div>
+                <div class="btuyf">
+                  <button id="show-popup-btn">CLick To Learn</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Popup Video Container -->
+            <div id="popup" class="popup hidden3">
+              <div class="popup-content">
+                <span class="close-btn" id="close-btn">&times;</span>
+                <video id="video1" src="../video/ElevenLabs_2025-05-03T00_40_15_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+              </div>
+            </div>
+
+            <!-- اscetion2(kinds of motherboard)-->
+<!-- 
+            <div class="ert hidden2" id="section2">
+              <div class="container-TWO  ">
+                <div class="slides">
+                  <div class="slide" id="slide1">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model3/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls></model-viewer>
+                      <h2>ATX</h2>
+                      <button onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
+                    </div>
+                  </div>
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model4/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>MICRO-ATX</h3>
+                      <button onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
+                    </div>
+                  </div>
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model4/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>MINI-ATX</h3>
+                      <button onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <button class="arrow" id="prev1">&#10094;</button>
+              <button class="arrow" id="next1">&#10095;</button>
+            </div> -->
+
+            <!-- اscetion3(What is The input devices)-->
+
+
+            <div class="cont" id="scetion3">
+                
+                <div class="gstr hidden1">
+                 
+                  <div class="rgbhn">
+                    <div class="model">
+                      <model-viewer src="../model16/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls>
+                      </model-viewer>
+                    </div>
+                    
+                  </div>
+                  <div class="btuyf">
+                    <button id="show-popup-btn2">CLick To Learn</button>
+                  </div>
+                  <div id="popup2" class="popup2 hidden3">
+                    <div class="popup-content2">
+                      <span class="close-btn2" id="close-btn2">&times;</span>
+                      <video id="video2" src="../video/ElevenLabs_2025-05-02T21_48_29_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <!-- اscetion4(input devices)-->
+            <div class="ert hidden2" id="scetion4">
+              <div class="container-TWO">
+                <div class="slides">
+                  <div class="slide" id="slide1">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model3/scene.gltf" alt="Keyboard" shadow-intensity="1" camera-controls></model-viewer>
+                      <h2>KeyBoard</h2>
+                      <button onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
+                    </div>
+                  </div>
+       
+                
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model6/scene.gltf" alt="microphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Microphone</h3>
+                      <button onclick="window.location.href='../learnMicrophone/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <img class="model-first" src="../img/ratio1x1_1920-removebg-preview.png" alt="">
+                      <h3>Scanner</h3>
+                      <button onclick="window.location.href='../learnScanner/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../mode19/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>DigitalCamera</h3>
+                      <button onclick="window.location.href='../learnDigitalCamera/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../mode20/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Disk drives</h3>
+                      <button onclick="window.location.href='../learnDrives/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model9/scene.gltf" alt="microphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Mouse</h3>
+                      <button onclick="window.location.href='../learnMouse/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            
+              <button class="arrow" id="prev2">&#10094;</button>
+              <button class="arrow" id="next2">&#10095;</button>
+            </div>
+
+            <!-- اscetion5(What is The output devices)-->
+            
+            <div class="cont" id="scetion5">
+
+           
+                <div class="gstr hidden1">
+                  
+                  <div class="rgbhn">
+                    <div class="model">
+                      <model-viewer src="../model17/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls>
+                      </model-viewer>
+                    </div>
+                    
+                  </div>
+                  <div class="btuyf">
+                    <button id="show-popup-btn3">CLick To Learn</button>
+                  </div>
+  
+                  <div id="popup3" class="popup hidden3">
+                    <div class="popup-content">
+                      <span class="close-btn" id="close-btn3">&times;</span>
+                      <video id="video3" src="../video/ElevenLabs_2025-05-03T00_36_03_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+
+            <!-- scetion6(output devices)  -->
+
+            <div class="ert hidden2" id="scetion6">
+              <div class="container-TWO">
+                <div class="slides">
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model4/scene.gltf" alt="monitar" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Monitar</h3>
+                      <button onclick="window.location.href='../learnMonitar/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model10/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Speakers</h3>
+                      <button onclick="window.location.href='../learnSpeakers/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model11/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>Printer</h3>
+                      <button onclick="window.location.href='../learnPrinter/index.html'">Click Learn More</button>
+
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../mode21/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>PLOTTERS</h3>
+                      <button onclick="window.location.href='../laernPLOTTERS/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            
+              <button class="arrow" id="prev3">&#10094;</button>
+              <button class="arrow" id="next3">&#10095;</button>
+            </div>
+
+              <!--scetion7(What is The camera)-->
+            
+              <div class="cont" id="scetion7">
+  
+             
+                <div class="gstr hidden1">
+                  
+                  <div class="rgbhn">
+                    <div class="model">
+                      <model-viewer src="../model15/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls>
+                      </model-viewer>
+                    </div>
+                  </div>
+
+                  <div class="btuyf">
+                    <button id="show-popup-btn4">CLick To Learn</button>
+                  </div>
+  
+                  <div id="popup4" class="popup hidden3">
+                    <div class="popup-content">
+                      <span class="close-btn" id="close-btn4">&times;</span>
+                      <video id="video4" src="../video/ElevenLabs_2025-05-03T00_37_59_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+  
+
+            <!-- scetion8(camera)  -->
+
+            <div class="ert hidden2" id="scetion8">
+              <div class="container-TWO">
+                <div class="slides">
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model22/scene.gltf" alt="monitar" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>camera</h3>
+                      <button onclick="window.location.href='../learnCamera/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+
+                  <div class="slide" id="slide2">
+                    <div class="posit">
+                      <model-viewer class="model-first" src="../model13/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
+                      <h3>project</h3>
+                      <button onclick="window.location.href='../learnproject/index.html'">Click Learn More</button>
+                    </div>
+                  </div>
+                  <!-- المزيد من الشرائح هنا -->
+                </div>
+              </div>
+            
+              <button class="arrow" id="prev4">&#10094;</button>
+              <button class="arrow" id="next4">&#10095;</button>
+            </div>
+
+           
+
+            
+
+
+      
+
+          
+          
+        </main>
+    </div>
+
+	  <script type="module"
+		  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+	  </script>
+
+	<script nomodule
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+	</script>
+    
+
+  <script src="../webLEaning/main.js"></script>
+    
+</body>
+
+</html>

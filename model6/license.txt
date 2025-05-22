@@ -1,0 +1,11 @@
+Model Information:
+* title:	Microfono HyperX Quadcast/HyperX Microphone
+* source:	https://sketchfab.com/3d-models/microfono-hyperx-quadcasthyperx-microphone-b7560f47a69c43c1a388fb7ea116db5a
+* author:	LoonaUwU (https://sketchfab.com/semoi0055)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Microfono HyperX Quadcast/HyperX Microphone" (https://sketchfab.com/3d-models/microfono-hyperx-quadcasthyperx-microphone-b7560f47a69c43c1a388fb7ea116db5a) by LoonaUwU (https://sketchfab.com/semoi0055) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

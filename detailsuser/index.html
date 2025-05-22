@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../detailsuser/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contanier">
+
+        <div class="icon-user">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="information-user">
+            <div class="email-user">
+                <label id="Email-user" for="Email">Email</label>
+                <input type="email" id="Email" readonly>
+            </div>
+            <div class="password-user">
+                <label id="Password-user" for="Password">password</label>
+                <div class="password-container">
+                    <input type="password" name="Password" id="Password" readonly>
+                    <i class="toggle-password" onclick="togglePassword()">👀</i>
+                </div>
+            </div>
+            <div class="butt-change">
+                <button id="changePasswordBtn"  class="button2"  onclick="window.location.href='../changepass/index.html'">Change password</button>
+                <button id="changeEmailBtn" class="button2"  onclick="window.location.href='../changeemail/index.html'">change Email</button>
+                <button class="button2" onclick="window.location.href='../seconedpage/index.html'" >Go back</button>
+            </div>
+           
+        </div>
+
+    </div>
+
+    <script src="../detailsuser/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>امتحان الهاردوير</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      padding: 20px;
+      direction: rtl;
+    }
+    .quiz-container {
+      max-width: 100%;
+      background: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; }
+    .timer {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: red;
+    }
+    #certificate {
+      display: none;
+      border: 5px solid #c4a000;
+      border-radius: 15px;
+      padding: 40px;
+      width: 700px;
+      margin: 40px auto;
+      background: #fffbea;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .question p {
+      margin: 10;
+      font-size: 18px;
+      font-weight: bold;
+      
+    }
+    button {
+      background: #3d28a7;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .navigation-buttons {
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      padding:10px;
+      text-align: left;      
+    }
+
+    .finish{
+        background: #b38f00;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width:100%;
+        font-size:20px;
+    }
+
+    #nextButton{
+        margin-left: 10px;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>امتحان الهاردوير - 5 دقائق</h2>
+    <div class="timer" id="timer">الوقت: 30:00</div>
+    <form id="quizForm">
+      <div class="result" id="result"></div>
+      
+      <div class="navigation-buttons">
+        <button type="button" id="nextButton" onclick="navigateSlides('next')">التالي</button>
+        <button type="button" id="prevButton" onclick="navigateSlides('prev')" disabled>السابق</button>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="finish" type="submit">انهاء الامتحان</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="certificate">
+    <h2 style="color: #b38f00; font-size: 32px; margin-bottom: 10px;">Certificate of Completion</h2>
+    <p style="font-size: 18px; margin-bottom: 5px;">This certifies that the student</p>
+    <h1 id="studentName" style="font-size: 32px; color: #333; margin: 20px 0;">Student Name</h1>
+    <p style="font-size: 18px; margin: 10px 0;">has successfully passed the exam:</p>
+    <p style="font-size: 20px; font-weight: bold; color: #333;">Hardware Principles</p>
+    <p style="font-size: 20px; margin: 20px 0;">Grade: <strong id="gradeResult"></strong></p>
+    <div style="margin-top: 50px; display: flex;  flex-direction: column; font-size: 16px; text-align: left;">
+      <span>Date: <strong id="date"></strong></span>
+      <span> ___________________:Signature</span>
+    </div>
+    <button onclick="downloadCertificate()" style="margin-top: 40px; padding: 12px 25px; font-size: 18px; background-color: #b38f00; color: white; border: none; border-radius: 8px;">Download Certificate (PDF)</button>
+  </div>
+
+  <script>
+    const questions = [
+      { question: "ما هي وظيفة وحدة المعالجة المركزية (CPU)؟", options: ["تخزين البيانات", "تنفيذ الأوامر والتعليمات", "عرض الصور", "تشغيل الإنترنت"], answer: 1 },
+      { question: "ما هو اختصار RAM؟", options: ["Real Access Memory", "Random Access Memory", "Read Access Machine", "Run All Memory"], answer: 1 },
+      { question: "أي من التالي يعتبر وحدة تخزين دائمة؟", options: ["RAM", "Cache", "Hard Disk", "CPU"], answer: 2 },
+      { question: "ما هو الجهاز المسؤول عن عرض الصور والفيديوهات؟", options: ["اللوحة الأم", "وحدة المعالجة", "الشاشة", "القرص الصلب"], answer: 2 },
+      { question: "ما وظيفة كرت الشاشة (GPU)؟", options: ["تحسين جودة الصوت", "تبريد الجهاز", "معالجة الرسوميات", "إدارة الإنترنت"], answer: 2 },
+      { question: "ما هي وظيفة مزود الطاقة (Power Supply)؟", options: ["تشغيل نظام التشغيل", "تحويل الطاقة الكهربائية لتغذية المكونات", "تخزين البيانات", "إخراج الصوت"], answer: 1 },
+      { question: "أي من هذه الوحدات يُستخدم لتخزين البيانات مؤقتًا؟", options: ["SSD", "HDD", "RAM", "CD"], answer: 2 },
+      { question: "اللوحة الأم تُستخدم في؟", options: ["ربط كل مكونات الحاسوب ببعضها", "زيادة سرعة الإنترنت", "تشغيل الألعاب", "تخزين الملفات"], answer: 0 },
+      { question: "أي من هذه الوحدات يُعتبر إدخال؟", options: ["الشاشة", "الطابعة", "الماوس", "السماعات"], answer: 2 },
+      { question: "ما الفرق بين SSD و HDD؟", options: ["SSD أسرع وأغلى من HDD", "HDD أصغر حجمًا من SSD", "SSD أكثر ضوضاء من HDD", "HDD لا يخزن البيانات"], answer: 0 },
+  { question: "أي من هذه الشريجات مسؤولة عن إدارة الاتصال بين المعالج والذاكرة؟", options: ["الجسر الجنوبي", "الجسر الشمالي", "BIOS", "رأس WOL"], answer: 1 },
+  { question: "ما هو نوع الموصل المستخدم لتوصيل محركات الأقراص الحديثة؟", options: ["IDE", "SATA", "USB", "PCI"], answer: 1 },
+  { question: "ما هو دور رأس WOL؟", options: ["تشغيل الكمبيوتر عن بُعد عبر الشبكة", "توصيل بطاقة الرسوميات", "تخزين نظام التشغيل", "تشغيل منافذ USB"], answer: 0 },
+  { question: "ما نوع الذاكرة التي تركب في فتحات DDR DIMM؟", options: ["SSD", "HDD", "RAM", "GPU"], answer: 2 },
+  { question: "أي من هذه الأنواع يعتبر حجمه أصغر ويستخدم في أجهزة صغيرة وصامتة؟", options: ["ATX", "Micro-ATX", "Mini-ITX", "Maxi-ITX"], answer: 2 },
+  { question: "اللوحة الأم تُعد مجرد وسيط لنقل الكهرباء بين المعالج وباقي المكونات.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "مقبس Socket 478 كان يُستخدم مع معالجات Intel Pentium 4.", options: ["صح", "خطأ"], answer: 0 },
+  { question: "موصل طاقة ATX بجهد 12 فولت يغذي كرت الشاشة بشكل مباشر.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "فتحات PCI تُستخدم فقط لتوصيل الذاكرة RAM.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "شريحة الجسر الجنوبي مسؤولة عن توصيل المعالج بالذاكرة مباشرة.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "أي من التالي يعتبر من وحدات إدخال البيانات؟", options: ["الشاشة", "الطابعة", "الميكروفون", "السماعات"], answer: 2 },
+  { question: "تستخدم مفاتيح (Alt + Shift) في الجانب الأيسر من لوحة المفاتيح لتغيير اللغة إلى:", options: ["العربية", "الإنجليزية", "الفرنسية", "الإسبانية"], answer: 1 },
+  { question: "ما هو استخدام الزر الأيسر في الفأرة عند الضغط والسحب؟", options: ["الإشارة", "الاختيار", "النقل (السحب والإفلات)", "التحديد"], answer: 2 },
+  { question: "أي وحدة إخراج تستخدم لطباعة رسومات بيانية وهندسية كبيرة الحجم؟", options: ["الطابعة", "الراسمات", "الشاشة", "السماعات"], answer: 1 },
+  { question: "أي من التالي يُستخدم لإدخال الصور والرسومات إلى الكمبيوتر؟", options: ["الراسمات", "الماسح الضوئي", "الشاشة", "السماعات"], answer: 1 },
+  { question: "أي وحدة إخراج تُستخدم لإظهار البيانات النصية والمرئية على الشاشة؟", options: ["الطابعة", "السماعات", "الشاشة (Monitor)", "الكاميرا الرقمية"], answer: 2 },
+  { question: "أي من التالي يُعد وحدة إدخال صوتية؟", options: ["الميكروفون", "الطابعة", "السماعات", "الراسمات"], answer: 0 },
+  { question: "تُستخدم وحدة إدخال لإدخال صور تم التقاطها مسبقًا، وهي:", options: ["الراسمات", "الطابعة", "الكاميرا الرقمية", "الماوس"], answer: 2 },
+  { question: "الكاميرا الرقمية تُعد من وحدات إدخال البيانات.", options: ["صح", "خطأ"], answer: 0 },
+  { question: "السماعات تُستخدم لإدخال الأصوات إلى جهاز الكمبيوتر.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "الفأرة تحتوي دائمًا على ثلاثة أزرار.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "الماسح الضوئي يُستخدم لإدخال الصور والرسومات إلى الكمبيوتر.", options: ["صح", "خطأ"], answer: 0 },
+  { question: "لوحة المفاتيح تحتوي على مفاتيح مخصصة للأرقام فقط.", options: ["صح", "خطأ"], answer: 0 },
+  { question: "السماعات تُستخدم لإدخال الموسيقى إلى الكمبيوتر.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "الفأرة تُستخدم فقط للإشارة ولا يمكن استخدامها في النقل أو الاختيار.", options: ["صح", "خطأ"], answer: 1 },
+  { question: "وحدة الاسطوانات يمكن استخدامها لإدخال البيانات عن طريق CD أو DVD.", options: ["صح", "خطأ"], answer: 0 },
+  { question: "تُصنع العدسات التقليدية عادةً من:", options: ["الحديد والنحاس", "الزجاج أو البلاستيك", "الخشب", "الألمنيوم"], answer: 1 },
+  { question: "السطح المقوس في العدسة يتكون من:", options: ["سطحين مستويين", "سطح واحد فقط", "سطح محدب وآخر مقعر", "سطح مسطح وسطح خشن"], answer: 2 },
+  { question: "العدسة التي تحتوي على بعد بؤري واحد تسمى:", options: ["عدسة تكبير", "عدسة رقمية", "عدسة ثابتة", "عدسة مزدوجة"], answer: 2 },
+  { question: "كلما كانت فتحة العدسة أكبر:", options: ["كانت الإضاءة أقل", "كانت جودة التصوير أفضل", "زاد رقم الـ f", "كانت الصور باهتة"], answer: 1 },
+  { question: "المستشعر في الكاميرا الرقمية يعمل على:", options: ["تبريد العدسة", "تحويل الضوء إلى حرارة", "تكبير الصورة", "تحويل الصورة البصرية إلى رقمية"], answer: 3 },
+  { question: "من أشهر أنواع المستشعرات في الكاميرات الرقمية:", options: ["LCD وLED", "CMOS وCCD", "USB وHDMI", "DSLR وMirrorless"], answer: 1 },
+  { question: "في الكاميرات بدون مرآة، يتعرض المستشعر للضوء:", options: ["عن طريق الشاشة فقط", "بشكل غير مباشر", "عن طريق المرآة", "بشكل مباشر"], answer: 3 },
+  { question: "حامل العدسة يُستخدم في الكاميرات:", options: ["التي لا تحتوي على عدسات", "ذات العدسات الثابتة", "ذات العدسات القابلة للفصل", "ذات العدسات المقعرة فقط"], answer: 2 },
+  { question: "أي من التالي يعتبر من وحدات الإدخال؟", options: ["الشاشة", "الطابعة", "الميكروفون", "السماعات"], answer: 2 },
+  { question: "تستخدم مفاتيح (Alt + Shift) في الجانب الأيسر من لوحة المفاتيح لتغيير اللغة إلى:", options: ["العربية", "الإنجليزية", "الفرنسية", "الإسبانية"], answer: 1 },
+  { question: "ما هو استخدام الزر الأيسر في الفأرة عند الضغط والسحب؟", options: ["الإشارة", "الاختيار", "النقل (السحب والإفلات)", "التحديد"], answer: 2 },
+  { question: "أي وحدة إخراج تستخدم لطباعة رسومات بيانية وهندسية كبيرة الحجم؟", options: ["الطابعة", "الراسمات", "الشاشة", "السماعات"], answer: 1 },
+  { question: "ما هو المكون الرئيسي في الكاميرات الرقمية لتحويل الضوء إلى صورة رقمية؟", options: ["المستشعر", "العدسة", "الشاشة", "الجهاز المحمول"], answer: 0 },
+  { question: "أي من التالي يعتبر من وحدات الإخراج؟", options: ["الفأرة", "الطابعة", "الكيبورد", "الميكروفون"], answer: 1 }
+];
+
+
+    const quizForm = document.getElementById("quizForm");
+    const resultDiv = document.getElementById("result");
+    const timerDiv = document.getElementById("timer");
+    const certDiv = document.getElementById("certificate");
+    const gradeResult = document.getElementById("gradeResult");
+    const studentName = document.getElementById("studentName");
+    const dateNow = document.getElementById("date");
+
+    let timeLeft = 30 * 60;
+    let currentSlide = 0; 
+    const totalSlides = questions.length;
+
+    const timerInterval = setInterval(() => {
+      let minutes = Math.floor(timeLeft / 60);
+      let seconds = timeLeft % 60;
+      timerDiv.textContent = `الوقت: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        quizForm.requestSubmit();
+      }
+      timeLeft--;
+    }, 1000);
+
+    function renderQuestions() {
+      questions.forEach((q, i) => {
+        const div = document.createElement("div");
+        div.className = "question";
+        div.innerHTML = `<p>${i + 1}. ${q.question}</p>`;
+        q.options.forEach((opt, j) => {
+          div.innerHTML += `
+            <label>
+              <input type="radio" name="q${i}" value="${j}" required> ${opt}
+            </label><br>`;
+        });
+        quizForm.insertBefore(div, resultDiv);
+      });
+      showSlide(currentSlide);
+    }
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll(".question");
+      slides.forEach(slide => slide.style.display = "none");
+      if (slides[index]) slides[index].style.display = "block";
+
+      document.getElementById("prevButton").disabled = index === 0;
+      document.getElementById("nextButton").disabled = index === totalSlides - 1;
+    }
+
+    function navigateSlides(direction) {
+      if (direction === 'next') {
+        currentSlide = (currentSlide + 1) % totalSlides;
+      } else if (direction === 'prev') {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      }
+      showSlide(currentSlide);
+    }
+
+    quizForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  clearInterval(timerInterval);
+  let score = 0;
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    if (selected && parseInt(selected.value) === q.answer) {
+      score++;
+    }
+  });
+
+  let grade = "";
+  if (score === 50) grade = "Exellent";
+  else if (score >= 48) grade = "very good";
+  else if (score >= 40) grade = "good";
+  else grade = "Weak";
+
+  document.querySelector('.quiz-container').style.display = 'none';
+  certDiv.style.display = 'block';
+  
+  confetti({
+    particleCount: 200,
+    spread: 100,
+    origin: { y: 0.6 }
+  });
+
+  gradeResult.textContent = grade;
+  const today = new Date();
+  const formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+  dateNow.textContent = formattedDate;
+
+  const name = localStorage.getItem("studentName") || "طالب مجهول";
+  studentName.textContent = name;
+});
+
+
+  function downloadCertificate() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Set font and title
+  doc.setFont("Helvetica", "normal");
+  doc.setFontSize(32);
+  doc.setTextColor(179, 143, 0);
+  doc.text("Certificate of Completion", 105, 40, { align: "center" });
+
+  // Set student name and other info
+  doc.setFontSize(18);
+  doc.setTextColor(0, 0, 0);
+  doc.text("This certifies that the student", 105, 60, { align: "center" });
+
+  const name = localStorage.getItem("studentName") || "طالب مجهول";
+  doc.setFontSize(24);
+  doc.setFont("Helvetica", "bold");
+  doc.text(name, 105, 80, { align: "center" });
+
+  doc.setFontSize(20);
+  doc.setFont("Helvetica", "normal");
+  doc.text('has successfully completed the "Hardware Principles" exam.', 105, 100, { align: "center" });
+
+  // Add grade and other information
+  doc.setFontSize(20);
+  doc.text(`Grade: ${gradeResult.textContent}`, 105, 120, { align: "center" });
+
+  // Add Date and Signature
+  const today = new Date();
+  doc.setFontSize(16);
+  doc.text(`Date: ${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`, 30, 140);
+  doc.text("Signature: ____________________", 30, 150);
+
+  // Save the certificate as PDF
+  doc.save(`certificate-${name}.pdf`);
+}
+
+
+
+    renderQuestions();
+  </script>
+</body>
+</html>
