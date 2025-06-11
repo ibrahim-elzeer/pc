@@ -90,7 +90,7 @@ function skipLogin() {
     localStorage.removeItem("userpassword");
 
     // نروح للصفحة التانية بدون حفظ بيانات
-    window.location.href = "../imgstu/index.html";
+    window.location.href = "imgstu/index.html";
 }
 
 
