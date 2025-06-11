@@ -23,7 +23,7 @@ loginBtn.addEventListener("click", function (e) {
     setTimeout(function () {
         document.querySelector(".loader").classList.remove("show"); 
         loginBtn.classList.remove("hide-text"); 
-        window.location.href = "../webInter/index.html";
+    window.location.href = "../imgstu/index.html";
     }, 5000); 
 });
 
@@ -90,7 +90,7 @@ function skipLogin() {
     localStorage.removeItem("userpassword");
 
     // نروح للصفحة التانية بدون حفظ بيانات
-    window.location.href = "../webInter/index.html";
+    window.location.href = "../imgstu/index.html";
 }
 
 
