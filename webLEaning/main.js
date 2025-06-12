@@ -145,17 +145,6 @@ closeBtn.addEventListener('click', function() {
 
 });
 
-window.addEventListener('click', function(event) {
-  if (event.target === popup) {
-    popup.style.display = 'none';
-  }
-});
-
-video1.onended = function() {
-  window.location.href = '../infromotherboar/index.html';
-};
-
-
 
 const showPopupBtn2 = document.getElementById('show-popup-btn2');
 const popup2 = document.getElementById('popup2');
@@ -389,10 +378,10 @@ hiddenElements6.forEach((el) => observer.observe(el));
 //   }
 // }
 
-
-
-
-
+  // تبدأ الجولة التوضيحية عند فتح الصفحة
+    window.onload = function() {
+      introJs().start();
+    }
 VANTA.FOG({
     el: "#vanta-bgd",
     mouseControls:false,
