@@ -14,6 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js" ></script>
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
+  <link rel="stylesheet" href="https://unpkg.com/intro.js/introjs.css">
+  
   <script>
     (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="vcp3MmS1Eznjm2x1Wgw8h";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
@@ -26,7 +28,7 @@
     <div class="contanier">
       <header class="header" id="header">
             <div class="dwfe">
-              <i id="menuBtn" class="fa-solid fa-bars"></i>
+              <i data-title="Bars" data-intro="click to show/hidden SideBar"  id="menuBtn" class="fa-solid fa-bars"></i>
             </div>
 
             <div class="user-icon">
@@ -39,46 +41,46 @@
             </div>
       </header>
   
-        <nav class="sidebar " id="sidebar">
+        <nav class="sidebar " id="sidebar"  data-intro="thisd is side bar to go sections"> 
             
             <div class="lav">
               <label for="motherboard-links">Go to Section</label>
             </div>
 
            <div class="dld">
-            <div  class="option1">
-              <a href="#scetion1">motherboard</a>
+            <div  data-title="MotherBoard" data-intro="click to go to section of MotherBoard"  class="option1">
+              <a href="#scetion1">MotherBoard</a>
             </div>
 
           <!-- <div class="option2">
               <a href="#section2">kinds of motherboard</a>
           </div> -->
 
-          <div class="option3">
+          <div data-title="Input Devices" data-intro="click to go to section of Input Devices" class="option3">
               <a href="#scetion3">Input Devices</a>
           </div>
 
-          <div class="option4">
+          <div data-title="Examples of input Devices" data-intro="click to go to section of Examples of input Devices" class="option4">
               <a href="#scetion4"> Examples of input Devices</a>
           </div>
 
-          <div class="option5">
+          <div data-title="Output Devices" data-intro="click to go to section of Output Devices" class="option5">
               <a href="#scetion5">output devices</a>
           </div>
 
-          <div class="option6">
-              <a href="#scetion6">Examples ofoutput devices</a>
+          <div data-title="Examples of Output Devices" data-intro="click to go to section of Examples of Output Devices" class="option6">
+              <a href="#scetion6">Examples of output devices</a>
           </div>
 
-          <div class="option7">
-              <a href="#scetion7">camera</a>
+          <div data-title="Camera" data-intro="click to go to section of Camera" class="option7">
+              <a href="#scetion7">Camera</a>
           </div>
 
-          <div class="option8">
+          <div data-title="Examples of the Camera" data-intro="click to go to section of Examples of the Camera" class="option8">
             <a href="#scetion8"> Examples of the camera</a>
           </div>
 
-          <div class="option9">
+          <div data-title="finall" data-intro="click to go to section of finall" class="option9">
             <a href="../certificate/certificate.html">finall</a>
           </div>
 
@@ -90,6 +92,7 @@
             <!-- اscetion1(motherboard)-->
 
             <div class="cont " id="scetion1">
+              <p  style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Motherboard</p>
               <div class="gstr hidden1">
 
                 <div class="rgbhn">
@@ -97,8 +100,8 @@
                     <model-viewer src="../model2/scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls></model-viewer>
                   </div>
                 </div>
-                <div class="btuyf">
-                  <button id="show-popup-btn">CLick To Learn</button>
+                <div  class="btuyf">
+                  <button  id="show-popup-btn">CLick To Learn</button>
                 </div>
               </div>
             </div>
@@ -107,7 +110,20 @@
             <div id="popup" class="popup hidden3">
               <div class="popup-content">
                 <span class="close-btn" id="close-btn">&times;</span>
-                <video id="video1" src="../video/ElevenLabs_2025-05-03T00_40_15_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                <div class="tohh">
+                    <video id="video1" src="../video/edit1.mp4" ></video>
+                   <div class="upr">
+                     <p style="font-size:25px;">تعريف اللوحة الرئيسية في الحاسوب تُعرف اللوحة الرئيسية في جهاز الحاسوب (Mainboard) باسم اللوحة الأم (Motherboard)، أو اللوحة الأساسية (Base board) أو حتى لوحة الدارات الرئيسية (Main circuit board)،[١] وهي عبارة عن جزء مصنوع من مادة غير موصلة، وعادة ما تكون من البلاستيك المُقوى، ويوجد عليها العديد من المكونات الرئيسية والمهمة لجهاز الحاسوب، كما تحتوي على العديد من الدارات الكهربائية التي تصل بين المكونات المختلفة الموجودة عليها، فضلاً عن ذلك تحتوي اللوحة الأم على عدد من المنافذ والفتحات لتوصيل بعض أجزاء الحاسوب عليها
+
+كيف يتم تحديد سرعة المعالج وسرعة الناقل الأمامي؟
+من خلال تردد الناقل الأمامي، تقوم شريحة الجسر الشمالي بتحديد سرعة المعالج وسرعة ناقل كرت الشاشة، هنا نرى أهمية هذه الشريحة التي تساهم في تحديد نوع المعالج الذي يمكن استخدامه على هذا المذربورد، سرعة المعالج تتحدد بما يسمى «معامل الضرب» وتردد الناقل، وتكون سرعة المعالج عبارة عن ناتج ضرب سرعة الناقل الأمامي بمعامل محدد، مثال على ذلك فان معالج بنتيوم 4 بسرعة 3200 MHZ هو عبارة عن سرعة الناقل الأمامي والتي تعادل 200 MHz مضروبة في معامل الضرب 16. عملية الضرب هذه تقوم بها شريحة الجسر الشمالي والمعالج بنفس الوقت، لذا، إذا كانت الشريحة لا تدعم معامل ضرب 16 أو أنها لا تدعم سرعة ناقل أمامي 200 MHZ فانك لن تستطيع تشغيل معالج 3200 MHZ على هذه اللوحة. كرت الشاشة AGP يعمل على سرعة ناقل 66MHZ، لتقليل سرعة الناقل الأمامي من سرعات 100MHZ و 133MHZ إلى هذه السرعة، فان شريحة الجسر الشمالي تقوم بعملية قسمة Divider تعادل ⅓ لسرعات 100MHZ ومعامل ½ لسرعات 133MHZ، ومعامل ⅓ لسرعات 200MHZ مثالنا لمعالج بنتيوم4 3200MHZ يمر بعملية قسمة تعادل (200 MHz * ⅓) مع جبر الكسر.</p>
+<div class="njm">
+  <button   onclick=" window.location.href = '../infromotherboar/index.html'">Learn More</button>
+
+</div>
+              
+                   </div>
+                </div>
               </div>
             </div>
 
@@ -148,6 +164,7 @@
 
 
             <div class="cont" id="scetion3">
+              <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></pstyle>Input Devices</p>
                 
                 <div class="gstr hidden1">
                  
@@ -164,7 +181,39 @@
                   <div id="popup2" class="popup2 hidden3">
                     <div class="popup-content2">
                       <span class="close-btn2" id="close-btn2">&times;</span>
-                      <video id="video2" src="../video/ElevenLabs_2025-05-02T21_48_29_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                     <div class="tohh">
+                       <video id="video2" src="../video/input.mp3.mp4" ></video>
+                      <p style="font-size:25px;">وحدات الإدخال
+ترتبط وحدات الادخال والاخراج ولولا وحدات الادخال لكانت وحدات الاخراج لا معنى لها، إن الماوس ولوحة المفاتيح والماسح الضوئي والميكروفون وكاميرا الويب من أكثر وحدات الإدخال المعروفة، حيث يعتبر الماوس ولوحة المفاتيح من أهمها، وقد تم تصميم جميع البرامج، بما فيها نظام التشغيل (OS)، بحيث يتم التنقل بينها والتحكم فيها باستخدام هذه الأجهزة.
+
+فيما يلي بعض من وحدات الإدخال الأكثر شيوعًا.
+
+لوحة المفاتيح
+يتم إدخال البيانات والتعليمات عن طريق الكتابة على لوحة المفاتيح حيث تصل الرسالة المكتوبة على لوحة المفاتيح إلى وحدة التخزين الخاصة بالكمبيوتر، وتكون متصلةً بجهاز الكمبيوتر سلكيًا أو لا سلكيًا.
+
+الفأرة
+وهو جهازٌ تأشيرٌ، فعند تحريك الفأرة يتحرك المؤشر الخاص بها على الشاشة، حيث يمكننا النقر، أو النقر المزدوج أو سحبها. وتحتوي على كرةٍ أسفلها، والتي تدور عند تحريك الفأرة فيقوم المستشعر الخاص بها بإعلام سرعة تحركاته للكمبيوتر، والتي بدورها تحرك المؤشر على الشاشة.
+
+الماسح الضوئي
+تستخدم الماسحات الضوئية لإدخال المعلومات مباشرةً إلى ذاكرة الكمبيوتر، حيث يقوم الماسح الضوئي بتحويل أي نوعٍ من المعلومات المطبوعة أو المكتوبة بما في ذلك الصور الفوتوغرافية إلى نبضاتٍ رقميةٍ يمكن معالجتها بواسطة الكمبيوتر.
+
+القلم الضوئي
+هو جهاز إدخالٍ يُستخدم لرسم خطوطٍ أو أرقامٍ على شاشة الكمبيوتر.
+
+Rader Character Optical أو قارئ الرموز البصرية 
+هو جهازٌ يكتشف الأحرف الهجائية الرقمية المطبوعة أو المكتوبة على الورق، حيث يضيء النص المراد مسحه بمصدر ضوءٍ منخفض التردد، يتم استلام الضوء المنعكس بواسطة خلاية ضوئية.
+
+قارئ الرمز الشريطي أو ما يسمى بالباركود 
+يقرأ هذا الجهاز الرموز الشريطية ويحولها إلى نبضاتٍ كهربائيةٍ لتتم معالجتها بواسطة جهاز كمبيوتر.
+
+أنظمة إدخال الصوت
+تقوم هذه الأجهزة بتحويل الكلمات المنطوقة إلى نموذج لغة M/C. حيث يتم تحويل الكلام البشري إلى إشاراتٍ كهربائيةٍ.
+
+الكاميرات الرقمية
+تقوم بتحويل الرسومات مباشرةً إلى شكلٍ رقميٍ، حيث تبدو وكأنها صورةٌ من كاميرا عادية ، أي أنها تقوم بتحويل الموجات الضوئية إلى موجاتٍ كهربائيةٍ.
+
+</p>
+                     </div>
                     </div>
                   </div>
                 </div>
@@ -176,51 +225,72 @@
                 <div class="slides">
                   <div class="slide" id="slide1">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">KeyBoard</p>
                       <model-viewer class="model-first" src="../model3/scene.gltf" alt="Keyboard" shadow-intensity="1" camera-controls></model-viewer>
-                      <h2>KeyBoard</h2>
-                      <button onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                       <button  onclick="window.location.href='../learnKey/learn.html'">Click Learn More</button>
+                    </div>
+
                   </div>
        
                 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Microphone</p>
                       <model-viewer class="model-first" src="../model6/scene.gltf" alt="microphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Microphone</h3>
-                      <button onclick="window.location.href='../learnMicrophone/index.html'">Click Learn More</button>
                     </div>
+                    <div class="butslid">
+                                          <button  onclick="window.location.href='../learnMicrophone/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Scanner</p>
                       <img class="model-first" src="../img/ratio1x1_1920-removebg-preview.png" alt="">
-                      <h3>Scanner</h3>
-                      <button onclick="window.location.href='../learnScanner/index.html'">Click Learn More</button>
                     </div>
+                    <div class="butslid">
+                                          <button onclick="window.location.href='../learnScanner/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">DigitalCamera</p>
                       <model-viewer class="model-first" src="../mode19/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>DigitalCamera</h3>
-                      <button onclick="window.location.href='../learnDigitalCamera/index.html'">Click Learn More</button>
                     </div>
+                    <div class="butslid">
+                          <button  onclick="window.location.href='../learnDigitalCamera/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Disk drives</p>
                       <model-viewer class="model-first" src="../mode20/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Disk drives</h3>
-                      <button onclick="window.location.href='../learnDrives/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                                          <button  onclick="window.location.href='../learnDrives/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Mouse</p>
                       <model-viewer class="model-first" src="../model9/scene.gltf" alt="microphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Mouse</h3>
-                      <button onclick="window.location.href='../learnMouse/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                        <button  onclick="window.location.href='../learnMouse/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                 </div>
@@ -234,7 +304,8 @@
             
             <div class="cont" id="scetion5">
 
-           
+              <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Output</p>
+
                 <div class="gstr hidden1">
                   
                   <div class="rgbhn">
@@ -251,7 +322,35 @@
                   <div id="popup3" class="popup hidden3">
                     <div class="popup-content">
                       <span class="close-btn" id="close-btn3">&times;</span>
-                      <video id="video3" src="../video/ElevenLabs_2025-05-03T00_36_03_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                      <div class="tohh">
+                                              <video id="video3" src="../video/edit2.mp4" ></video>
+                                              <p style="font-size:25px;">وحدات الإخراج 
+المكون الثاني في وحدات الادخال والاخراج هي وحدات الاخراج، ووحدات الإخراج للكمبيوتر هي كافة الأجهزة الطرفية المتصلة بالكمبيوتر باستخدام كبلاتٍ أو شبكات اتصالٍ لاسلكيةٍ.
+
+حيث تقوم وحدات الإخراج بنقل البيانات التي تمت معالجتها بواسطة الكمبيوتر للمستخدم بمختلف الأشكال الصوتية والمرئية والنسخ المطبوعة. وتعد الشاشات والطابعات من أكثر أجهزة الإخراج المستخدمة مع الكمبيوتر شيوعًا، وفيما يلي أمثلة على أكثر وحدات الإخراج شيوعًا.
+
+الشاشة 
+  تقوم بإنشاء عرضٍ مرئيٍّ للمستخدمين لعرض البيانات التي تمت معالجتها من بيانات إلى صورٍ مرئيةٍ، وتصنع بمختلف الأحجام والأنواع، مثل شاشات أنبوب أشعة الكاثود، ويستخدم هذا النوع  النقاط الفسفورية لإنشاء البكسلات التي تشكل صورًا معروضةً، والشاشات المسطحة التي تستخدم البلورات السائلة أو البلازما، حيث يتم تمرير الضوء من خلال البلورات السائلة لتوليد البكسل.
+
+تعتمد كافة أجهزة العرض على بطاقة فيديو موضوعة على اللوحة الأم للكمبيوتر أو في فتحةٍ خاصةٍ.
+
+الطابعة 
+تقوم بإنشاء نسخ مطبوعة من البيانات التي تمت معالجتها مثل المستندات والصور الفوتوغرافية، حيث يقوم الكمبيوتر بنقل بيانات الصورة إلى الطابعة، والتي تقوم بإعادة الصورة بشكلٍ ماديٍّ وملموسٍ، عادةً على الورق.
+
+مكبرات الصوت
+تقوم بتحويل البيانات الرقمية من الكمبيوتر إلى أصوات.
+
+سماعة الرأس
+هي مزيجٌ من مكبرات الصوت والميكروفون.
+
+جهاز الإسقاط 
+هو جهازٌ يعرض الصور أو الفيديو الذي تم إنشاؤه بواسطة الكمبيوتر, ثم يقوم الكمبيوتر بنقل البيانات إلى بطاقة الفيديو الخاصة به ، والتي تقوم بعد ذلك بإرسال صورة الفيديو إلى جهاز الإسقاط، ويستخدم عادة للعروض التقديمية أو لعرض مقاطع الفيديو.
+
+الراسم 
+يولد نسخة ورقية من التصميم الرقمي، حيث يتم إرسال التصميم إلى الراسم من خلال بطاقة الرسومات ويشكل التصميم باستخدام قلمٍ خاصٍ ويستخدم بشكلٍ عامٍ في التطبيقات الهندسية. ويرسم الصورة بشكلٍ أساسيٍّ باستخدام سلسلةٍ من الخطوط المستقيمة.</p>
+
+                      </div>
+                      
                     </div>
                   </div>
 
@@ -265,36 +364,50 @@
                 <div class="slides">
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Monitar</p>
                       <model-viewer class="model-first" src="../model4/scene.gltf" alt="monitar" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Monitar</h3>
-                      <button onclick="window.location.href='../learnMonitar/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                                          <button  onclick="window.location.href='../learnMonitar/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Speakers</p>
                       <model-viewer class="model-first" src="../model10/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Speakers</h3>
-                      <button onclick="window.location.href='../learnSpeakers/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                        <button  onclick="window.location.href='../learnSpeakers/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Printer</p>
                       <model-viewer class="model-first" src="../model11/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>Printer</h3>
-                      <button onclick="window.location.href='../learnPrinter/index.html'">Click Learn More</button>
 
+                    </div>
+                    <div class="butslid">
+                      <button  onclick="window.location.href='../learnPrinter/index.html'">Click Learn More</button>
                     </div>
                   </div>
 
-                  <div class="slide" id="slide2">
-                    <div class="posit">
+                  <div  class="slide" id="slide2">
+                    <div  class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PLOTTERS</p>
                       <model-viewer class="model-first" src="../mode21/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>PLOTTERS</h3>
-                      <button onclick="window.location.href='../laernPLOTTERS/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                       <button  onclick="window.location.href='../laernPLOTTERS/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                 </div>
@@ -308,6 +421,7 @@
             
               <div class="cont" id="scetion7">
   
+                <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Camera</p>
              
                 <div class="gstr hidden1">
                   
@@ -325,7 +439,29 @@
                   <div id="popup4" class="popup hidden3">
                     <div class="popup-content">
                       <span class="close-btn" id="close-btn4">&times;</span>
-                      <video id="video4" src="../video/ElevenLabs_2025-05-03T00_37_59_George_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" ></video>
+                      <div class="tohh">
+                                              <video id="video4" src="../video/camera.mp3.mp4" ></video>
+
+                        <p style="font-size:25px;">الفرق بين الكاميرا الرقمية والكاميرا الفيلمية
+لا فرق جوهري سوى في طريقة استقبال، والاحتفاظ بالصورة الملتقطة. ففي الفيلم، تنطبع الصورة المتكوّنة من ومضة الضوء المارة بالعدسة على شريط مطليّ بمواد كيميائية أهمها نترات الفضة الحسّاسة للضوء، يتم تظهيرها بعد ذلك بنقعها في مواد كيميائية ثم طباعتها على ورق التصوير. لم تكن عملية كهذه تحتاج لطاقة كهربائية في آلة التصوير، إذن أن العملية عبارة عن تفاعل كيميائي، وكان يتم تدوير الفيلم لاستقبال اللقطة التالية بواسطة ذراع ميكانيكي. أما آلة التصوير الرقمية، التي لا تعمل دون طاقة كهربائية، فستقبل الصورة من خلال مكشاف ضوئي، حيث تستقبل ملايين العنصورات فوتونات الضوء، ثم تعالجها إلكترونيًا، تمهيدًا لتخزينها في ذاكرة داخل الكاميرا على شكل صور رقمية مؤلفة من وحدة تسمى البيكسل. أتاح وجود معالج إلكتروني داخل الكاميرا إمكانية القيام بالكثير من العمليات على الصورة الملتقطة كالتدوير والحذف، كما مكّن من تسجيل مقاطع الفيديو القصيرة والصوت. يمكنك أيضًا تطبيق بعض المؤثرات قبل التصوير، كالتصوير بالأبيض والأسود.
+
+مزايا الكاميرا الرقمية
+السُّرعة: ولعل هذا هو أهم عامل، إذ أن نجاح معظم الأعمال في العصر الحاضر قائم على السرعة، فمع التصوير الرقمي، يمكنك التقاط الصورة وتخزينها على حاسوبك في أقل من دقيقة، ويمكنك طباعتها بنفس جودة ورق الطباعة التقليدي في أقل من خمس دقائق، كما يمكنك نشرها على الإنترنت، أو إرسالها بالبريد الإلكتروني في دقائق معدودة.
+
+قلّة التكلفة: وربما قد يستغرب البعض، إذ أن كلفة شراء آلة تصوير رقمية قد يساوي ضعفيّ أو ثلاثة أضعاف سعر الآلة الفيلمية (التقليدية). إلا أن العكس هو الصحيح، فمع الآلة الفيلمية، تبدأ التكاليف وتستمر. من شراء مستمرّ للأفلام، وتكاليف لتظهير (تحميض) كل فيلم، مع ازدياد الوضع سوءً عند فساد بعض الصور؛ إما لأخطاء أو مشاكل أثناء التصوير أو في الفيلم أو أثناء عملية التظهير. أما الآلة الرقمية، فيمكنك فيها مسح الصور بضغطة زر، ويمكنك استخدام الذاكرة (ذاكرة تخزين الصور) آلاف المرّات دون مشاكل، علماً بأن أسعار هذه الذاكرات منخفضة ويمكنها تخزين مئات الصور عالية الجودة، وليس لعدد محدود كما في الفيلم. وعندما لا تعجبك أي صورة أو حتى مجموعة من الصور فضغطة زر واحدة تعيد الذاكرة خالية.
+
+
+تمكنك شاشة الكرستال السائل من مشاهدة الصور قبل وأثناء وبعد التقاطها وكذلك التحكم بوظائف الكاميرا
+تعدّد الخيارات: سواء قبل التقاط الصورة أو بعده، فقبل الالتقاط يمكنك رؤية الصورة النهائية، بحيث يمكنك تعديل التعريض مثلاً أو تطبيق تأثيرات كالتصوير بالأبيض والأسود. وبعد الالتقاط يمكنك معاينة الصورة، وتطبيق بعض المؤثرات عليها، كالتدوير والعكس، أو حتى حذفها. أما عند نقلها إلى الحاسوب، فهناك تبدأ الخيارات ولا تنتهي.
+
+التطور المستمر في تصنيع الآلات الرقمية: ويشمل هذا التطوير تقنيات حسّاسات الضوء، وكذلك تقنيات منع اهتزاز الصورة، نتيجة لاهتزاز آلة التصوير، وكذلك العديد من التقنيات الأخرى، ويترافق كل ذلك مع تدني في أسعار آلات التصوير الرقمية.
+
+سهولة الاستخدام: وهذه من الأمور المهمة للمبتدئين والمستخدمين العاديين، حيث تقوم معظم آلات التصوير الرقمية بضبط كل الإعدادات اللازمة لالتقاط صورة جيّدة. أما في الآلات المتوسطة والعالية المستوى، فتمتلك خيارات متعدّدة، كما تضم أنماط تصوير جاهزة يمكن الاختيار من بينها بحسب بيئة التصوير.
+
+الحفاظ على البيئة: لأنها لا تحتاج إلى مواد كيميائية مضرّة بالبيئة، كما هو موجود في التصوير التقليدي.
+
+بالإضافة إلى العديد من المزايا الأخرى التي تجعل من التصوير الرقمي خيارًا استراتيجيًا.</p>
+                      </div>
                     </div>
                   </div>
 
@@ -341,18 +477,25 @@
                 <div class="slides">
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> camera</p>
                       <model-viewer class="model-first" src="../model22/scene.gltf" alt="monitar" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>camera</h3>
-                      <button onclick="window.location.href='../learnCamera/index.html'">Click Learn More</button>
                     </div>
+                    <div class="butslid">
+                        <button  onclick="window.location.href='../learnCamera/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
 
                   <div class="slide" id="slide2">
                     <div class="posit">
+                      <p style="font-size: 60px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">project</p>
                       <model-viewer class="model-first" src="../model13/scene.gltf" alt="headphone" shadow-intensity="1" camera-controls></model-viewer>
-                      <h3>project</h3>
-                      <button onclick="window.location.href='../learnproject/index.html'">Click Learn More</button>
                     </div>
+
+                    <div class="butslid">
+                      <button  onclick="window.location.href='../learnproject/index.html'">Click Learn More</button>
+                    </div>
+
                   </div>
                   <!-- المزيد من الشرائح هنا -->
                 </div>
@@ -381,7 +524,7 @@
 	<script nomodule
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
 	</script>
-    
+    <script src="https://unpkg.com/intro.js/intro.js"></script>
 
   <script src="../webLEaning/main.js"></script>
     
