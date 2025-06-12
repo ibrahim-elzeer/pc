@@ -1,9 +1,11 @@
 *{
     margin: 0%;
     padding: 0%;
-    overflow: hidden;
 }
 
+body{
+  overflow: hidden;
+}
 
 .contanier{
     display: grid;
@@ -11,7 +13,7 @@
     "sidebar header"
     "sidebar main";
     grid-template-columns:350px 1fr;
-    grid-template-rows:100px 1fr;
+    grid-template-rows:80px 1fr;
     height:100vh;    
     
 }
@@ -36,6 +38,7 @@ nav{
     padding: 20px;
     background-color:rgb(245, 246, 247);
     transition: transform 0.5s ease-in-out;
+    
 }
 
 main{
@@ -58,6 +61,7 @@ main{
     align-items: center;
     height:100vh;
     transition: opacity 2s ease-in-out;
+    margin-top:-100px;
 }
 
 
@@ -355,7 +359,6 @@ label{
     width:98%;
     height:600px;
     border:2px solid rgb(255, 252, 252);
-    box-shadow:0px 0px 15px whitesmoke;
     border-radius:20px;
 }
 .model{
@@ -859,3 +862,30 @@ h2,h3,p{
 
 
 
+.tohh{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tohh p{
+  color:black;
+  font-size:30px;
+  width:100%;
+}
+
+
+.butslid{
+  padding:10px;
+  margin-top:10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.njm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
