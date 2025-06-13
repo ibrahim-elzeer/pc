@@ -1,3 +1,3 @@
 setTimeout(() => {
-  window.location.href = "../firstexam/index.html"; 
-}, 30200 ); 
+  window.location.href = "../Instructions/index.html"; 
+}, 29200 ); 
