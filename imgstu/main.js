@@ -2,12 +2,12 @@ const items = document.querySelectorAll('.item');
 let currentIndex = 0;
 
 const durations = [
-    11000, // Student One
-    9000, // Student Two
-    10000,  // Student Three
-    14000,  // Student Four
-    15700,  // Doctor
-    11000   // Teaching
+    2000, // Student One
+    2000, // Student Two
+    2000,  // Student Three
+    2000,  // Student Four
+    2000,  // Doctor
+    2000   // Teaching
 ];
 
 function showNextItem() {
