@@ -2,6 +2,17 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+@keyframes firs{
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
 }
 
 body{
@@ -10,7 +21,12 @@ body{
     align-items: center;
     height:100vh;
 }
-
+.cnr{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    animation:firs 1s ease-in-out;
+}
 .contanier {
     position: relative;
     width: 300px;
@@ -18,6 +34,9 @@ body{
     overflow: hidden;
     width:100%;
     height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item {
@@ -37,21 +56,22 @@ body{
 
 p{
     font-size:50px;
-    color:white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .item img{
-    width:900px;
-    height:900px;
+    width:600px;
+    height:600px;
     border-radius:50%;
     border:2px solid black;
     object-fit: cover;
 
-    transform:scale(0.6);
-
 }
 
+.right{
+    width:90%;
+}
 
 #back{
     width:100%;
