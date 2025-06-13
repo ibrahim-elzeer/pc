@@ -377,11 +377,75 @@ hiddenElements6.forEach((el) => observer.observe(el));
 //     return "ممكن توضح أكتر؟ لسه بتعلم 😅";
 //   }
 // }
+if (!localStorage.getItem('dontShohwIngtro')) {
+  const intro = introJs();
+  intro.setOptions({
+    steps: [
+      {
+ intro: `
+Welcome! Let's explore the sidebar.
+  <br><br>
+  <label>
+    <input type="checkbox" id="dontShowAgainCheckbox">
+    <span style="font-size: 13px;">Don't show this again</span>
+  </label>
+`      },
+      {
+        element: document.querySelector('#fec1'),
+        intro: "This leads to MotherBoard section."
+      },
+      {
+        element: document.querySelector('#fec2'),
+        intro: "Input Devices section."
+      },
+      {
+        element: document.querySelector('#fec3'),
+        intro: "Examples of input devices."
+      },
+      {
+        element: document.querySelector('#fec4'),
+        intro: "Output devices section."
+      },
+      {
+        element: document.querySelector('#fec5'),
+        intro: "Examples of output devices."
+      },
+      {
+        element: document.querySelector('#fec6'),
+        intro: "Camera section."
+      },
+      {
+        element: document.querySelector('#fec8'),
+        intro: "Examples of the camera."
+      },
+      {
+        element: document.querySelector('#fec9'),
+        intro: "Go to final page."
+      },
+            {
+        element: document.querySelector('#menuBtn'),
+        intro: "show and hidden sidebar."
+      },
+   
+    ]
+  });
 
-  // تبدأ الجولة التوضيحية عند فتح الصفحة
-    window.onload = function() {
-      introJs().start();
+  intro.oncomplete(function() {
+    if (document.getElementById("dontShowAgainCheckbox")?.checked) {
+      localStorage.setItem("dontShohwIngtro", "true");
     }
+  });
+
+  intro.onexit(function() {
+    if (document.getElementById("dontShowAgainCheckbox")?.checked) {
+      localStorage.setItem("dontShohwIngtro", "true");
+    }
+  });
+
+  intro.start();
+}
+
+
 VANTA.FOG({
     el: "#vanta-bgd",
     mouseControls:false,
