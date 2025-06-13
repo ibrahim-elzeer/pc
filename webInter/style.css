@@ -9,16 +9,16 @@ body{
 }
 
 .contanier{
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:140vh;
+    height:110vh;
+    animation: firs 1s ease-in-out;
 }
 
 video{
-    animation:up 1s ease-in-out; 
-    border-radius:50%;
-    width:600px;
+    animation:up 1.5s ease-in-out; 
+    width:650px;
 }
 
 @keyframes up{
@@ -29,3 +29,40 @@ video{
         transform: translateY(0px);
     }
 }
+
+
+
+@keyframes firs{
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+
+ .but {
+    margin:10px;
+    }
+
+    .but button {
+      background-color: #007BFF; /* Bootstrap blue */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .but button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .but button:active {
+      transform: scale(0.98);
+    }
