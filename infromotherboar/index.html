@@ -352,24 +352,26 @@ img{
   </div>
 
   <script>
+// زر عرض البوب أب الأول
 const showPopupBtn = document.getElementById('show-popup-btn');
 const popup = document.getElementById('popup');
 const closeBtn = document.getElementById('close-btn');
 const video1 = document.getElementById('video1');
 
-// Show popup on button click
+// لما المستخدم يضغط على زر العرض، يظهر البوب أب ويتم تشغيل الفيديو من البداية
 showPopupBtn.addEventListener('click', function() {
   popup.style.display = 'flex';
   video1.play(); 
   video1.currentTime = 0; 
 });
 
+// عند الضغط على زر الإغلاق، يتم إخفاء البوب أب وإيقاف الفيديو
 closeBtn.addEventListener('click', function() {
   popup.style.display = 'none';
-    video1.pause(); 
-
+  video1.pause(); 
 });
 
+// عند الضغط خارج محتوى البوب أب، يتم إغلاقه
 window.addEventListener('click', function(event) {
   if (event.target === popup) {
     popup.style.display = 'none';
