@@ -144,21 +144,23 @@ next5.addEventListener('click', () => {
 
 showSlide5(currentSlide8);
 
+// الحصول على العناصر من الصفحة (الزر - النافذة - زر الإغلاق - الفيديو)
 const showPopupBtn = document.getElementById('show-popup-btn');
 const popup = document.getElementById('popup');
 const closeBtn = document.getElementById('close-btn');
 const video1 = document.getElementById('video1');
 
+// عند الضغط على زر "عرض النافذة"
 showPopupBtn.addEventListener('click', function() {
-  popup.style.display = 'flex';
-  video1.play(); 
-  video1.currentTime = 0; 
+  popup.style.display = 'flex';   // إظهار النافذة المنبثقة
+  video1.play();                  // تشغيل الفيديو تلقائيًا
+  video1.currentTime = 0;         // بدء الفيديو من البداية
 });
 
+// عند الضغط على زر "إغلاق"
 closeBtn.addEventListener('click', function() {
-  popup.style.display = 'none';
-    video1.pause(); 
-
+  popup.style.display = 'none';  // إخفاء النافذة المنبثقة
+  video1.pause();                // إيقاف الفيديو
 });
 
 
