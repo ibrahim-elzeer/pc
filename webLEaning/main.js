@@ -241,42 +241,53 @@ window.addEventListener('click', function(event) {
 
 
 
-
+// جلب عناصر الصفحة المتعلقة بالـ Sidebar والـ Main والـ Header وزر القائمة
 const sidebar = document.getElementById("sidebar");
 const main = document.getElementById("main");
 const header = document.getElementById("header");
 const menuBtn = document.getElementById("menuBtn");
 
+// عند الضغط على زر القائمة
 menuBtn.addEventListener("click", () => {
+  // تبديل ظهور الـ sidebar (يعني لو ظاهر يختفي، والعكس)
   sidebar.classList.toggle("hidden");
+
+  // توسيع أو تضييق المساحة الرئيسية (main) والهيدر حسب حالة الـ sidebar
   main.classList.toggle("full");
   header.classList.toggle("full");
 });
 
 
+// دالة لفتح/إغلاق قائمة المستخدم (User Menu)
 function toggleMenu2() {
   const menu = document.getElementById("userMenu2");
 
   if (menu.classList.contains("show")) {
+    // إذا كانت مفتوحة، اخفيها
     menu.classList.remove("show");
     menu.classList.add("hide");
   } else {
+    // إذا كانت مخفية، أظهرها
     menu.classList.remove("hide");
     menu.classList.add("show");
   }
 }
 
+// إغلاق قائمة المستخدم إذا ضغط المستخدم خارجها
 document.addEventListener("click", function (e) {
   const menu = document.getElementById("userMenu2");
   const icon = document.querySelector(".fa-user");
 
+  // إذا العنصر اللي ضغط عليه المستخدم مش جوه القائمة أو الأيقونة
   if (!menu.contains(e.target) && !icon.contains(e.target)) {
+    // لو القائمة كانت مفتوحة، اقفلها
     if (menu.classList.contains("show")) {
       menu.classList.remove("show");
       menu.classList.add("hide");
     }
   }
 });
+
 
 
 
