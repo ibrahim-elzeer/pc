@@ -31,35 +31,51 @@
 // showSlide2(currentSlide2);
 
 // Section 4 (Separate Navigation)
+// تعريف المتغير اللي هيحتفظ بالرقم الحالي للشرائح
 let currentSlide4 = 0;
+
+// جلب كل الشرائح الموجودة داخل القسم رقم 4
 const slides3 = document.querySelectorAll('#scetion4 .slide');
+
+// جلب زر السابق (prev) وزر التالي (next)
 const prev3 = document.getElementById('prev2');
 const next3 = document.getElementById('next2');
 
+// دالة لعرض الشريحة حسب الرقم المطلوب
 function showSlide3(index) {
+    // لو الرقم أصغر من 0، ارجع لآخر شريحة
     if (index < 0) {
         currentSlide4 = slides3.length - 1;
-    } else if (index >= slides3.length) {
+    } 
+    // لو الرقم أكبر من أو يساوي عدد الشرائح، ارجع لأول شريحة
+    else if (index >= slides3.length) {
         currentSlide4 = 0;
     }
+
+    // إزالة الكلاس 'active' من كل الشرائح
     slides3.forEach((slide, i) => {
         slide.classList.remove('active');
+
+        // إضافة الكلاس 'active' للشريحة الحالية فقط
         if (i === currentSlide4) {
             slide.classList.add('active');
         }
     });
 }
 
+// عند الضغط على زر السابق، يتم عرض الشريحة السابقة
 prev3.addEventListener('click', () => {
     currentSlide4--;
     showSlide3(currentSlide4);
 });
 
+// عند الضغط على زر التالي، يتم عرض الشريحة التالية
 next3.addEventListener('click', () => {
     currentSlide4++;
     showSlide3(currentSlide4);
 });
 
+// عرض الشريحة الأولى عند تحميل الصفحة
 showSlide3(currentSlide4);
 
 
