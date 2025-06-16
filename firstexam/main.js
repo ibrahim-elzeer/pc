@@ -51,66 +51,77 @@ const correctAnswers = {
   q50: 1   // الطابعة (وحدة إخراج)
 };
 
-  document.getElementById("quizForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+  
+// عند إرسال النموذج (submit) الخاص بالاختبار
+document.getElementById("quizForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // منع إعادة تحميل الصفحة عند الإرسال
 
-    let score = 0;
-    let total = Object.keys(correctAnswers).length;
+  let score = 0; // عدد الإجابات الصحيحة
+  let total = Object.keys(correctAnswers).length; // عدد الأسئلة
 
-    const radios = document.querySelectorAll('input[type="radio"]');
-    radios.forEach(radio => radio.disabled = true);
+  // تعطيل كل الاختيارات بعد الضغط على زر الإرسال (عشان المستخدم ميتلاعبش بالنتيجة)
+  const radios = document.querySelectorAll('input[type="radio"]');
+  radios.forEach(radio => radio.disabled = true);
 
-    let allAnswered = true;
-    for (let key in correctAnswers) {
-      const selected = document.querySelector(`input[name="${key}"]:checked`);
-      if (!selected) {
-        allAnswered = false;
-        break;
-      }
+  let allAnswered = true; // التحقق هل كل الأسئلة تم الإجابة عليها
+
+  // المرور على كل سؤال والتأكد إنه تم اختياره
+  for (let key in correctAnswers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    if (!selected) {
+      allAnswered = false;
+      break;
+    }
+  }
+
+  // لو في سؤال مش مجاوب عليه، نعرض تنبيه ونرجع نفعّل الاختيارات
+  if (!allAnswered) {
+    alert("يرجى الإجابة على جميع الأسئلة قبل الإرسال");
+    radios.forEach(radio => radio.disabled = false);
+    return;
+  }
+
+  // حساب النتيجة النهائية من خلال مقارنة الاختيارات مع الإجابات الصحيحة
+  for (let key in correctAnswers) {
+    const selected = document.querySelector(`input[name="${key}"]:checked`);
+    if (selected && parseInt(selected.value) === correctAnswers[key]) {
+      score++;
+    }
+  }
+
+  // بعد ثانية واحدة، يتم عرض الرسالة حسب النتيجة
+  setTimeout(() => {
+    let msg = "";
+    if (score === total) {
+      msg = "ممتاز! معلوماتك قوية جدًا 👏";
+    } else if (score >= 47) {
+      msg = "مستواك جيد، بس لسه في حاجات ممكن تتعلمها 💪";
+    } else {
+      msg = "واضح إنك محتاج تبدأ من الأساس، وإحنا معاك خطوة بخطوة 👨‍🏫";
     }
 
-    if (!allAnswered) {
-      alert("يرجى الإجابة على جميع الأسئلة قبل الإرسال");
-      radios.forEach(radio => radio.disabled = false);
-      return;
-    }
+    // عرض النتيجة في عنصر HTML يحمل id="result"
+    document.getElementById("result").textContent = `عدد الإجابات الصحيحة: ${score} من ${total} - ${msg}`;
+  }, 1000);
 
-    for (let key in correctAnswers) {
-      const selected = document.querySelector(`input[name="${key}"]:checked`);
-      if (selected && parseInt(selected.value) === correctAnswers[key]) {
-        score++;
-      }
-    }
+  // بعد ثانية كمان، نظهر زر "التقدم الآن" اللي ينقل المستخدم لصفحة ثانية
+  setTimeout(() => {
+    document.getElementById("nextBtnContainer").innerHTML = `
+      <div id="button2">التقدم الان</div>
+      <div id="loader" style="display:none; margin-top: 10px;"></div>
+      <div id="loaderr" style="display:none; font-weight:bold;">جاري التحميل...</div>
+    `;
 
-    setTimeout(() => {
-      let msg = "";
-      if (score === total) {
-        msg = "ممتاز! معلوماتك قوية جدًا 👏";
-      } else if (score >= 47) {
-        msg = "مستواك جيد، بس لسه في حاجات ممكن تتعلمها 💪";
-      } else {
-        msg = "واضح إنك محتاج تبدأ من الأساس، وإحنا معاك خطوة بخطوة 👨‍🏫";
-      }
+    // عند الضغط على زر التقدم
+    document.getElementById("button2").addEventListener("click", function () {
+      this.style.display = "none"; // إخفاء الزر
+      document.getElementById("loader").style.display = "block"; // إظهار لودر التحميل
+      document.getElementById("loaderr").style.display = "block"; // إظهار النص
 
-      document.getElementById("result").textContent = `عدد الإجابات الصحيحة: ${score} من ${total} - ${msg}`;
-    }, 1000);
-
-  
-    setTimeout(() => {
-      document.getElementById("nextBtnContainer").innerHTML = `
-        <div id="button2">التقدم الان</div>
-        <div id="loader" style="display:none; margin-top: 10px;"></div>
-        <div id="loaderr" style="display:none; font-weight:bold;">جاري التحميل...</div>
-      `;
-  
-      document.getElementById("button2").addEventListener("click", function () {
-        this.style.display = "none";
-        document.getElementById("loader").style.display = "block";
-        document.getElementById("loaderr").style.display = "block";
-  
-        setTimeout(() => {
-          window.location.href = "../seconedpage/index.html";
-        }, 2000);
-      });
-    },1000 );
-  });
+      // بعد 2 ثانية، يتم تحويل المستخدم إلى صفحة جديدة
+      setTimeout(() => {
+        window.location.href = "../seconedpage/index.html";
+      }, 2000);
+    });
+  }, 1000);
+});
