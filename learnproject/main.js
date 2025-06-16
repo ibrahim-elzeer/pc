@@ -1,23 +1,24 @@
 // popup1
-const showPopupBtn1 = document.getElementById('show-popup-btn1');
-const popup1= document.getElementById('popup1');
-const closeBtn1 = document.getElementById('close-btn1');
+const showPopupBtn1 = document.getElementById('show-popup-btn1'); // زر إظهار البوب أب
+const popup1 = document.getElementById('popup1');                 // عنصر البوب أب نفسه
+const closeBtn1 = document.getElementById('close-btn1');          // زر الإغلاق داخل البوب أب
 
+// عند الضغط على زر "إظهار" يتم عرض البوب أب
 showPopupBtn1.addEventListener('click', function() {
-  popup1.style.display = 'flex';
- 
+  popup1.style.display = 'flex'; // نعرض العنصر بتنسيق flex
 });
 
+// عند الضغط على زر "إغلاق" يتم إخفاء البوب أب
 closeBtn1.addEventListener('click', function() {
   popup1.style.display = 'none';
 });
 
+// لو المستخدم ضغط خارج محتوى البوب أب (على الخلفية)، يتم إغلاقه
 window.addEventListener('click', function(event) {
   if (event.target === popup1) {
     popup1.style.display = 'none';
   }
 });
-
 
 
 // popup2
