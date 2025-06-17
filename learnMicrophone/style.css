@@ -64,3 +64,29 @@
     line-height: 60px;
     color: rgb(249, 249, 249);
   }
+.but {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; /* عشان يطلع فوق بقية العناصر */
+}
+
+.but button {
+    background-color: #007BFF; /* Bootstrap blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.but button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.but button:active {
+    transform: scale(0.98);
+}
